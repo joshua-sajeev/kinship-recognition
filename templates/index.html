@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Uploads</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="app">
+    <div class="form-section">
+      <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file1" id="file1">
+        <input type="file" name="file2" id="file2">
+        <input type="submit" value="Upload">
+      </form>
+    </div>
+
+    <div class="images-section">
+      {% for image in images %}
+        <a href="{{ url_for('serve_image', filename=image) }}" target="_blank">
+          <img src="{{ url_for('serve_image', filename=image) }}"/>
+        </a>
+      {% endfor %}
+    </div>
+
+    <div class="predict-section">
+      <form action="/predict" method="post">
+        <input type="submit" value="Predict">
+      </form>
+      <form action="/clear" method="post">
+        <input type="submit" value="Clear Images">
+      </form>
+    </div>
+
+      <div class="prediction-section">
+        <p id="cosine-similarity">{{ cosine_similarity }}</p>
+        <p id="kinship-label">{{ kinship_label }}</p>
+      </div>
+
+
+  </div>
+</body>
+</html>
+

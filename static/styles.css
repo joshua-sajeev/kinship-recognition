@@ -1,0 +1,88 @@
+/* styles.css */
+
+:root {
+  --black: #000000;
+  --almost-black: #080708;
+  --blue: #3772FF;
+  --blue-light: #3787ff;
+  --red: #DF2935;
+  --yellow: #FDCA40;
+  --light: #E6E8E6;
+  --white: #FFFFFF;
+  --green: #4CAF50; /* New color */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light); /* Change background color */
+}
+
+.app {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid var(--almost-black); /* Adjust border color */
+  border-radius: 5px;
+  background-color: var(--white); /* Change background color */
+}
+
+.form-section {
+  margin-bottom: 20px;
+}
+
+.form-section input[type="submit"],
+.form-section input[type="file"] {
+  background-color: var(--blue); /* Change button color */
+  color: var(--white); /* Change text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-section input[type="file"] {
+  margin-right: 10px;
+}
+
+.images-section {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Wrap images */
+}
+
+.images-section img {
+  display: block;
+  max-width: 200px; /* Set max width */
+  height: auto;
+  margin: 5px; /* Adjust margin for spacing */
+  border-radius: 5px; /* Add border radius */
+}
+
+.predict-section form {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.predict-section form input[type="submit"] {
+  background-color: var(--green); /* Change button color */
+  color: var(--white); /* Change text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.predict-section form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.predict-section form:last-child {
+  margin-right: 0;
+}
+
+.prediction-section {
+  margin-top: 20px; /* Add margin for separation */
+}
+
