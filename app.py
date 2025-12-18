@@ -82,3 +82,6 @@ def clear_images():
         if os.path.splitext(file)[1].lower() in app.config['ALLOWED_EXTENSIONS']:
             os.remove(os.path.join(app.config['UPLOAD_DIRECTORY'], file))
     return redirect('/')
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
